@@ -12,7 +12,9 @@
 
 ## Why I Chose This Issue
 
-[1-2 paragraphs explaining why this issue interests you, how it matches your skills/learning goals, what you hope to learn]
+I chose this issue because it is a focused bug in an AI evaluation platform, and it seems like a realistic first open-source contribution. The issue is clearly described, has a small scope, and is labeled as a good first issue, which makes it a good fit for learning the contribution workflow without taking on a large feature or unclear architectural change. The issue is also currently unassigned and has no linked pull requests or branches, so it looks available to work on.
+
+This issue also matches my current learning goals because it involves both backend and frontend search behavior. I want to improve my ability to understand an unfamiliar codebase, trace how user input flows through backend and frontend components, and make a small but useful fix. Even though the bug is not a deep machine learning problem, it is part of an AI evaluation workflow, and fixing it would improve the usability of the evaluation search experience.
 
 ---
 
