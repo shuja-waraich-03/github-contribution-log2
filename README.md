@@ -1,8 +1,11 @@
 # Contribution [#]: [Issue Title]
 
 **Contribution Number:** 2
+
 **Student:** Shuja Waraich
+
 **Issue:** [GitHub issue link]  
+
 **Status:** Phase I
 
 ---
