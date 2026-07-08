@@ -4,7 +4,7 @@
 
 **Student:** Shuja Waraich
 
-**Issue:** [GitHub issue link]  
+**Issue:** [[GitHub issue link]  ](https://github.com/future-agi/future-agi/issues/1384)
 
 **Status:** Phase I
 
@@ -12,9 +12,9 @@
 
 ## Why I Chose This Issue
 
-I chose this issue because it is a focused bug in an AI evaluation platform, and it seems like a realistic first open-source contribution. The issue is clearly described, has a small scope, and is labeled as a good first issue, which makes it a good fit for learning the contribution workflow without taking on a large feature or unclear architectural change. The issue is also currently unassigned and has no linked pull requests or branches, so it looks available to work on.
+I chose this issue because it is a focused frontend bug in an AI-related open-source project, and it looks realistic for a first contribution. The issue is clearly described, labeled as a good first issue, and has a small scope with a specific affected file and suggested fix. It is also currently unassigned and has no linked branches or pull requests, which makes it a good candidate to work on without competing with an existing implementation.
 
-This issue also matches my current learning goals because it involves both backend and frontend search behavior. I want to improve my ability to understand an unfamiliar codebase, trace how user input flows through backend and frontend components, and make a small but useful fix. Even though the bug is not a deep machine learning problem, it is part of an AI evaluation workflow, and fixing it would improve the usability of the evaluation search experience.
+This issue matches my learning goals because I want to practice contributing to a real codebase by making a small, reviewable change. Although the bug is frontend-focused, it still gives me experience reading unfamiliar project code, understanding component state, checking UI behavior, and submitting a clean pull request. I also like that the issue involves a real user experience problem: the button’s visual state does not match its actual enabled state, which can confuse users.
 
 ---
 
