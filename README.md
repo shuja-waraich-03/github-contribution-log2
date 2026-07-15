@@ -22,19 +22,21 @@ This issue matches my learning goals because I want to practice contributing to 
 
 ### Problem Description
 
-[In your own words, what's broken or missing?]
+In the Workbench prompt commit dialog, the outlined **Commit** button continues to look disabled after a user enters a commit message. The button becomes clickable, but its grey text color incorrectly suggests that it is still unavailable. This creates a confusing mismatch between the button's appearance and its actual state.
 
 ### Expected Behavior
 
-[What should happen?]
+The outlined **Commit** button should be greyed out and unclickable while the commit-message field is unchanged or while a commit request is pending. After the user enters a message, it should switch to the active primary outlined style and become clickable, matching the state change shown by the adjacent **Commit and set as a default version** button.
 
 ### Current Behavior
 
-[What actually happens?]
+After the user types a commit message, the button's disabled state is removed and clicking it works. However, the button text remains grey because `color: "text.disabled"` is applied unconditionally. As a result, the enabled and disabled states look nearly identical.
 
 ### Affected Components
 
-[Which parts of the codebase are involved?]
+- `frontend/src/sections/workbench/createPrompt/promptActions/SaveAndCommit.jsx`
+- The outlined **Commit** Material UI `LoadingButton` inside the component's `DialogActions`
+- The button's `sx` color styling; its existing `isDirty` and `isPending` state logic is involved in determining behavior but does not need to be changed
 
 ---
 
@@ -42,7 +44,15 @@ This issue matches my learning goals because I want to practice contributing to 
 
 ### Environment Setup
 
-[Notes on setting up your local development environment - challenges you faced, how you solved them]
+The Future AGI application can be run locally using its documented self-hosted Docker setup. Docker Desktop (or Docker Engine with Docker Compose) must be running first. I used the project's installer from the repository root:
+
+```bash
+git clone https://github.com/future-agi/future-agi.git
+cd future-agi
+./bin/install
+```
+
+After installation, the application is available at `http://localhost:3000`. The main setup requirement is ensuring Docker is installed and running before executing the installer. No additional workaround is required for this issue because it can be reproduced through the Workbench user interface once the application is running.
 
 ### Steps to Reproduce
 
