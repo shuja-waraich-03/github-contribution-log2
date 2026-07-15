@@ -46,15 +46,28 @@ This issue matches my learning goals because I want to practice contributing to 
 
 ### Steps to Reproduce
 
-1. [Step 1]
-2. [Step 2]
-3. [Observed result]
+1. Install and start Docker Desktop (or Docker Engine with Docker Compose).
+2. Clone the project and enter its directory:
+   ```bash
+   git clone https://github.com/future-agi/future-agi.git
+   cd future-agi
+   ```
+3. Start the self-hosted application:
+   ```bash
+   ./bin/install
+   ```
+4. Open `http://localhost:3000` in a browser and sign in or create an account if prompted.
+5. Open **Workbench**, select **Prompt**, and open any existing prompt (or create and save one first).
+6. Click **Commit** in the top bar to open the **Commit changes to prompt** dialog.
+7. Before entering a message, confirm that the outlined **Commit** button is greyed out and cannot be clicked.
+8. Type any text into the commit-message field, such as `Test commit`.
+9. Observe that **Commit and set as a default version** changes to an active style, but the outlined **Commit** button still looks greyed out even though it is now clickable. This visual mismatch reproduces issue #1384.
 
 ### Reproduction Evidence
 
-- **Commit showing reproduction:** [Link to commit in your fork]
+- **Branch in my fork:** [master](https://github.com/shuja-waraich-03/github-contribution-log2/tree/master)
 - **Screenshots/logs:** [If applicable]
-- **My findings:** [What you discovered during reproduction]
+- **My findings:** The button's disabled logic changes correctly after the commit message is edited, but its hardcoded `color: "text.disabled"` styling keeps it visually grey in the enabled state.
 
 ---
 
@@ -70,22 +83,11 @@ This issue matches my learning goals because I want to practice contributing to 
 
 ### Implementation Plan
 
-Using UMPIRE framework (adapted):
-
-**Understand:** [Restate the problem]
-
-**Match:** [What similar patterns/solutions exist in the codebase?]
-
-**Plan:** [Step-by-step implementation plan]
-1. [Modify file X to do Y]
-2. [Add function Z]
-3. [Update tests]
-
-**Implement:** [Link to your branch/commits as you work]
-
-**Review:** [Self-review checklist - does it follow the project's contribution guidelines?]
-
-**Evaluate:** [How will you verify it works?]
+- Update the outlined **Commit** `LoadingButton` in `frontend/src/sections/workbench/createPrompt/promptActions/SaveAndCommit.jsx`.
+- Remove the unconditional `color: "text.disabled"` value from its `sx` prop and set `color="primary"`, allowing Material UI to apply its normal enabled and disabled styles.
+- Leave the existing `disabled={!isDirty || isPending}` logic unchanged because it already controls click behavior correctly.
+- Manually verify the empty-message, entered-message, and pending-request states, and confirm that the outlined button's visual state matches the adjacent **Commit and set as a default version** button.
+- Run the relevant frontend formatting, linting, and tests before submitting the change.
 
 ---
 
