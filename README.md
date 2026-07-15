@@ -1,4 +1,5 @@
-# Contribution [#]: [Issue Title]
+# Contribution [#]: Workbench commit dialog: the "Commit" button stays greyed out (looks disabled) after typing a commit message
+ 
 
 **Contribution Number:** 2
 
